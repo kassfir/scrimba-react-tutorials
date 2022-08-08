@@ -1,5 +1,3 @@
-import logo from '../assets/react.png'
-
 export default function Navbar() {
     return (
         <nav>
