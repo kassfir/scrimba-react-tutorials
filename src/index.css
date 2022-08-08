@@ -14,25 +14,33 @@ body {
   color: whitesmoke;
 }
 
-.navbar {
+nav {
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: #000;
+  background-color: #21222A;
+  padding: 30px 25px;
 }
 
+.nav--logo_text, .nav--title {
+  margin: 0;
+}
 
-
-.project-name{
+.nav--logo_text {
   color:#00D8FF;
   font-weight: 700;
+  font-size: 22px;
+
 }
 
-.navbar-item {
-  padding: 20px;
-}
-
-.project-info {
+.nav--title {
+  margin: 0;
   margin-left: auto;
-  color: lightgrey
+  color: #DEEBF8;
 }
+
+.nav--logo {
+  height: 30px;
+  margin-right: 7px;
+}
+
