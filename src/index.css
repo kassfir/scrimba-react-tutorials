@@ -2,6 +2,8 @@
 
 #root {
   font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
 * {
@@ -10,68 +12,117 @@
 
 body {
   margin: 0;
-  background-color: #282D35;
-  background-image: url('react-grey.svg');
-  background-repeat: no-repeat;
-  background-position: 115% 70%;
-  background-size: 50vh;
-}
-
-nav {
-  display: flex;
-  align-items: center;
+  background-color: #23252C;
+  color: #DCDCDC;
   width: 100%;
-  background-color: #21222A;
-  padding: 30px 25px;
+  
 }
 
-.nav--logo_text, .nav--title {
-  margin: 0;
+.main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 317px;
+  background-color: #1A1B21;
+  margin: 50px;
+  border-radius: 0 0 10px 10px;
 }
 
-.nav--logo_text {
-  color:#00D8FF;
+.info-container {
+  text-align: center;
+}
+
+.info--pic {
+  border-radius: 10px 10px 0 0;
+  width: 317px;
+}
+
+.info--name {
+  size: 25px;
   font-weight: 700;
-  font-size: 22px;
-
-}
-
-.nav--title {
   margin: 0;
-  margin-left: auto;
-  color: #DEEBF8;
+  margin-top: 20px;
 }
 
-.nav--logo {
-  height: 30px;
-  margin-right: 7px;
-}
-
-main {
-  padding: 55px 27px;
-  color: whitesmoke;
-
-}
-
-.main--facts > li{
-  padding-block: 10px;
-  line-height: 19px;
-}
-
-.main--facts > li::marker {
-  color:#00D8FF;
-  font-size: 1.3rem;
-}
-
-.main--title {
+.info--role {
+  color: #F3BF99;
+  size: 10.24px;
+  font-weight: 400;
   margin: 0;
-  font-size: 39px;
-  letter-spacing: -0.05em;
-  font-weight: bold;
+  margin-top: 5px;
 }
 
-.main--facts {
-   margin-top: 46px;
-   max-width: 400px;
+.info--site {
+  size: 13px;
+  font-weight: 400;
+  margin: 10px;
 }
 
+.info--button-container {
+  margin: 17px 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 35px;
+}
+
+.info--contact-button {
+  padding: 9px 13px 9px 11px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 115px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.info--linkedin-button {
+  background-color: #5093E2;
+  color: white;
+}
+
+.info--email-button {
+  background-color: white;
+  color: black;
+}
+
+.info--contact-button > p {
+  margin: 0;
+}
+
+.main--section-container {
+  padding: 15px 35px;
+}
+
+.main--section-header {
+  margin: 0;
+  font-size: 16px;
+}
+
+.main--paragraph {
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 150%;
+}
+
+
+
+footer {
+  background-color: #161619;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 0 10px 10px;
+  margin-top: 20px;
+}
+
+
+.footer--icon-container{
+  padding: 19px 11px;
+  color: #918E9B;
+  font-size: 25px;
+}
+
+.footer--icon-container :hover {
+  color: white;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+}
