@@ -1,15 +1,13 @@
-import Footer from './components/Footer'
-import Interests from './components/Interests'
-import About from './components/About'
-import Info from './components/Info'
+import Card from './components/Card'
+import Header from './components/Header'
+import Hero from './components/Hero'
 
 function App() {
   return ( 
     <div className='main-container'>
-      <Info></Info>
-      <About></About>
-      <Interests></Interests>
-      <Footer></Footer>
+      <Header />
+      {/* <Hero /> */}
+      <Card />
     </div>
   )
 }

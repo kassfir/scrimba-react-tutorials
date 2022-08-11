@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 #root {
-  font-family: 'Inter', sans-serif;
-  min-width: 100%;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  border-radius: 10px;
 }
 
 * {
@@ -13,118 +11,79 @@
 }
 
 body {
-  margin: 0;
-  background-color: #23252C;
-  color: #DCDCDC;
-  width: 100%;
-  
+  margin: 0;  
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  background-color: lightgrey;
 }
 
 .main-container {
+  width: 550px;
+}
+
+nav {
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+  height: 70px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  padding: 20px 36px;
+}
+
+.nav--logo {
+  max-width: 100px;
+}
+
+section {
+  padding: 20px
+}
+
+.hero--container {
+  display: flex;
   flex-direction: column;
-  width: 317px;
-  background-color: #1A1B21;
-  margin: 50px;
-  border-radius: 0 0 10px 10px;
 }
 
-.info-container {
-  text-align: center;
+.hero--image {
+  max-width: 400px;
+  align-self: center;
+  width: 100%;
 }
 
-.info--pic {
-  border-radius: 10px 10px 0 0;
-  width: 317px;
+.hero--header {
+  margin-bottom: 16px;
+  font-weight: bold;
 }
 
-.info--name {
-  size: 25px;
-  font-weight: 700;
-  margin: 0;
-  margin-top: 20px;
+.hero--paragraph {
+  margin-top: 0px;
+  width: 320px;
+  font-weight: 300;
 }
 
-.info--role {
-  color: #F3BF99;
-  size: 10.24px;
-  font-weight: 400;
-  margin: 0;
-  margin-top: 5px;
+.card--image-container {
+  position: relative;
 }
 
-.info--site {
-  size: 13px;
-  font-weight: 400;
-  margin: 10px;
+.card--status {
+  float: left;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: lightgrey;
+  line-height: 0%;
+  padding: 0px 5px;
+  border-radius: 3px;
 }
 
-.info--button-container {
-  margin: 17px 0;
+.card--rating-container {
   display: flex;
-  justify-content: space-between;
-  padding: 0 35px;
+  align-items: center;
 }
 
-.info--contact-button {
-  padding: 9px 13px 9px 11px;
-  font-size: 14px;
-  display: flex;
-  justify-content: space-evenly;
-  width: 115px;
-  border-radius: 6px;
-  cursor: pointer;
+.card--rating-container > * {
+  padding: 0 4px;
 }
 
-.info--linkedin-button {
-  background-color: #5093E2;
-  color: white;
-}
-
-.info--email-button {
-  background-color: white;
-  color: black;
-}
-
-.info--contact-button > p {
-  margin: 0;
-}
-
-.main--section-container {
-  padding: 15px 35px;
-}
-
-.main--section-header {
-  margin: 0;
-  font-size: 16px;
-}
-
-.main--paragraph {
-  font-weight: 400;
-  font-size: 12.5px;
-  line-height: 150%;
-}
-
-
-
-footer {
-  background-color: #161619;
-  display: flex;
-  justify-content: center;
-  border-radius: 0 0 10px 10px;
-  margin-top: 20px;
-}
-
-
-.footer--icon-container{
-  padding: 19px 11px;
-  color: #918E9B;
-  font-size: 25px;
-}
-
-.footer--icon-container :hover {
-  color: white;
-  transition: 0.25s ease-in-out;
-  cursor: pointer;
+.card--rating-extra {
+  color: grey;
 }
