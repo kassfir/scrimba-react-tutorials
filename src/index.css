@@ -1,104 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-#root {
-  font-family: 'Poppins', sans-serif;
-  background-color: white;
-  border-radius: 10px;
-}
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;  
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  background-color: whitesmoke;
+}
+
+.contacts {
   display: flex;
   justify-content: center;
-  margin: 50px;
-  background-color: lightgrey;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-.main-container {
-  width: 550px;
-}
-
-nav {
-  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
-  height: 70px;
-  display: flex;
-  align-items: center;
-  padding: 20px 36px;
-}
-
-.gray {
-  color: #918E9B;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.nav--logo {
-  max-width: 100px;
-}
-
-section {
-  padding: 20px
-}
-
-.hero--container {
+.contact-card {
+  flex-basis: 225px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  padding: 13px;
+  padding-bottom: 20px;
+  background-color: white;
 }
 
-.hero--image {
-  max-width: 400px;
+.contact-card > img {
+  width: 100%;
+  height: auto;
   align-self: center;
-  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
-.hero--header {
-  margin-bottom: 16px;
-  font-weight: bold;
+.contact-card > h3 {
+  font-weight: 700;
+  font-size: 18px;
 }
 
-.hero--paragraph {
-  margin-top: 0px;
-  width: 320px;
-  font-weight: 300;
-}
-
-.card {
-  width: 175px;
-  font-size: 12px;
-}
-
-.card--profile-pic { 
-  width: 100%;
-  border-radius: 9px;
-}
-
-.card--image-container {
-  position: relative;
-}
-
-.card--status {
-  float: left;
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  background-color: lightgrey;
-  line-height: 0%;
-  padding: 0px 5px;
-  border-radius: 3px;
-}
-
-.card--stats {
+.info-group {
   display: flex;
   align-items: center;
-  
 }
 
-.card--rating-count, .card--country {
-  color: grey;
+.info-group > img {
+  height: 11px;
+  margin-right: 8px;
+}
+
+.info-group > p {
+  margin-block: 3px;
+  font-size: 12px;
+  color: #2B283A;
+}
+
+.info--icon {
+  padding-right: 4px;
 }
