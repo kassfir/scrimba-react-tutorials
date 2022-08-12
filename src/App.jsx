@@ -15,60 +15,34 @@ function App() {
     return (
         <div className="contacts">
 
-            <Contact img='./cats/mr-whiskerson.jpg' name='Mr. Whiskerson' phone='(212) 555-1234' email='mr.whiskaz@catnap.meow'  />
-        
-            <div className="contact-card">
-                <img src="./cats/mr-whiskerson.jpg"/>
-                <h3>Mr. Whiskerson</h3>
-                <div className="info-group">
-                    <FontAwesomeIcon icon={faPhone} className='info--icon'></FontAwesomeIcon>
-                    <p>(212) 555-1234</p>
-                </div>
-                <div className="info-group">
-                    <FontAwesomeIcon icon={faEnvelope} className='info--icon'></FontAwesomeIcon>
-                    <p>mr.whiskaz@catnap.meow</p>
-                </div>
-            </div>
-            
-            <div className="contact-card">
-                <img src="./cats/fluffykins.jpg"/>
-                <h3>Fluffykins</h3>
-                <div className="info-group">
-                    <FontAwesomeIcon icon={faPhone} className='info--icon'></FontAwesomeIcon>
-                    <p>(212) 555-2345</p>
-                </div>
-                <div className="info-group">
-                    <FontAwesomeIcon icon={faEnvelope} className='info--icon'></FontAwesomeIcon>
-                    <p>fluff@me.com</p>
-                </div>
-            </div>
-            
-            <div className="contact-card">
-                <img src="./cats/felix.jpg"/>
-                <h3>Felix</h3>
-                <div className="info-group">
-                    <FontAwesomeIcon icon={faPhone} className='info--icon'></FontAwesomeIcon>
-                    <p>(212) 555-4567</p>
-                </div>
-                <div className="info-group">
-                    <FontAwesomeIcon icon={faEnvelope} className='info--icon'></FontAwesomeIcon>
-                    <p>thecat@hotmail.com</p>
-                </div>
-            </div>
-            
-            <div className="contact-card">
-                <img src="./cats/pumpkin.jpg"/>
-                <h3>Pumpkin</h3>
-                <div className="info-group">
-                    <FontAwesomeIcon icon={faPhone} className='info--icon'></FontAwesomeIcon>
-                    <p>(0800) CAT KING</p>
-                </div>
-                <div className="info-group">
-                    <FontAwesomeIcon icon={faEnvelope} className='info--icon'></FontAwesomeIcon>
-                    <p>pumpkin@scrimba.com</p>
-                </div>
-            </div>
-            
+            <Contact 
+              img='./cats/mr-whiskerson.jpg'
+               name='Mr. Whiskerson' 
+               phone='(212) 555-1234' 
+               email='mr.whiskaz@catnap.meow'  
+            />
+
+            <Contact 
+              img='./cats/fluffykins.jpg' 
+              name='Fluffykins' 
+              phone='(212) 555-2345' 
+              email='fluff@me.com'  
+            />
+
+            <Contact 
+              img='./cats/felix.jpg' 
+              name='Felix' 
+              phone='(212) 555-4567' 
+              email='thecat@hotmail.com'  
+            />
+
+            <Contact 
+              img='./cats/pumpkin.jpg' 
+              name='Pumpkin' 
+              phone='(0800) CAT KING' 
+              email='pumpkin@scrimba.com'  
+            />
+
         </div>
     )
 }
