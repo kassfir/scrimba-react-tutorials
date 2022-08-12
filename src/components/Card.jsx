@@ -27,14 +27,15 @@ export default function Card () {
                 </div>
             </div>
 
-            <div className="card--rating-container">
+            <div className="card--stats">
                 <img src="./star.png"></img>
-                <p className="card--rating-score">5.0</p>
-                <p className="card--rating-extra">(6) - USA</p>
+                <span className="card--rating-score">5.0</span>
+                <span className="card--rating-count">(6) • </span>
+                <span className="card--country">USA</span>
             </div>
 
             <p>Life Lessons with Katie Zaferes</p>
-            <p><b>From $136</b> / person</p>
+            <p><span className="bold">From $136</span> / person</p>
         </div>
     )
 }

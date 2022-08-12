@@ -30,6 +30,14 @@ nav {
   padding: 20px 36px;
 }
 
+.gray {
+  color: #918E9B;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .nav--logo {
   max-width: 100px;
 }
@@ -60,6 +68,16 @@ section {
   font-weight: 300;
 }
 
+.card {
+  width: 175px;
+  font-size: 12px;
+}
+
+.card--profile-pic { 
+  width: 100%;
+  border-radius: 9px;
+}
+
 .card--image-container {
   position: relative;
 }
@@ -75,15 +93,12 @@ section {
   border-radius: 3px;
 }
 
-.card--rating-container {
+.card--stats {
   display: flex;
   align-items: center;
+  
 }
 
-.card--rating-container > * {
-  padding: 0 4px;
-}
-
-.card--rating-extra {
+.card--rating-count, .card--country {
   color: grey;
 }
