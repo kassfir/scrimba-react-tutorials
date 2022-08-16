@@ -6,18 +6,11 @@ import data from './data'
 function App() {
   // let events = Data
 
-  let eventComponents = data.map(event =>
+  let eventComponents = data.map(item =>
       <Card 
-        key={event.id}
-        img={event.coverImg}
-        rating={event.stats.rating}
-        reviewCount={event.stats.reviewCount}
-        location={event.location}
-        title={event.title}
-        price={event.price}
-        openSpots={event.openSpots}
-      />
-      
+        key={item.id}
+        item={item}
+      /> 
   );
 
 
