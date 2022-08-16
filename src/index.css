@@ -4,4 +4,33 @@
 
 body {
   font-family: "Karla", sans-serif;
+  background-color: blanchedalmond;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.joke {
+  border-style: solid;
+  border-color: grey;
+  border-radius: 1rem;
+  padding: 1em;
+  background-color: white;
+  margin: 1rem;
+  text-align: center;
+}
+
+.joke--question {
+  font-size: medium;
+}
+
+.joke--punchline {
+  font-size: medium;
+  font-weight: 400;
+}
+
+
+
+
