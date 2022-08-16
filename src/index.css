@@ -68,37 +68,43 @@ section {
   font-weight: 300;
 }
 
+.cards-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
 .card {
   width: 175px;
   font-size: 12px;
+  flex: 0 0 auto;         /* ADD */
+  display: flex;          /* ADD */
+  flex-direction: column; /* ADD */
 }
 
-.card--profile-pic { 
+.card--image {
   width: 100%;
   border-radius: 9px;
+  margin-bottom: 9px;
 }
 
-.card--image-container {
-  position: relative;
-}
-
-.card--status {
-  float: left;
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  background-color: lightgrey;
-  line-height: 0%;
-  padding: 0px 5px;
-  border-radius: 3px;
+/* ADD */
+.card--title {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card--stats {
   display: flex;
   align-items: center;
-  
 }
 
-.card--rating-count, .card--country {
-  color: grey;
+.card--star {
+  height: 14px;
+}
+
+/* ADD */
+.card--price {
+  margin-top: auto;
 }
