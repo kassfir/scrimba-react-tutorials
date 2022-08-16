@@ -17,11 +17,11 @@ Notes:
   this data into the component.
 */
 
-export default function Card () {
+export default function Card (props) {
     return (
         <div className="card">
             <div className="card--image-container">
-                <img src="./profile.png" className="card--profile-pic"></img>
+                <img src={props.img} className="card--profile-pic"></img>
                 <div className="card--status">
                     <p>SOLD OUT</p>
                 </div>
@@ -29,13 +29,13 @@ export default function Card () {
 
             <div className="card--stats">
                 <img src="./star.png"></img>
-                <span className="card--rating-score">5.0</span>
-                <span className="card--rating-count">(6) • </span>
-                <span className="card--country">USA</span>
+                <span className="card--rating-score">{props.rating}</span>
+                <span className="card--rating-count">{`(${props.reviewCount}) • `}</span>
+                <span className="card--country">{props.country}</span>
             </div>
 
-            <p>Life Lessons with Katie Zaferes</p>
-            <p><span className="bold">From $136</span> / person</p>
+            <p>{props.title}</p>
+            <p><span className="bold">{`From $${props.price}`}</span> / person</p>
         </div>
     )
 }
