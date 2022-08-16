@@ -15,6 +15,7 @@ function App() {
         location={event.location}
         title={event.title}
         price={event.price}
+        openSpots={event.openSpots}
       />
       
   );
