@@ -9,7 +9,7 @@ function App() {
   let eventComponents = data.map(item =>
       <Card 
         key={item.id}
-        item={item}
+        {...item}
       /> 
   );
 
