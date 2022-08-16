@@ -1,6 +1,4 @@
 import React from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Joke from "./components/Joke"
 
 /* Challenge:
@@ -79,37 +77,17 @@ function App() {
 
   // console.log('got here');
 
-  let jokeList = [
-    <h1>Stuff</h1>,
-    <h1>other stuff</h1>
-  ]
+  let jokeElements = jokes.map(joke => {
+    return <Joke 
+      setup={joke['setup']}
+      punchline={joke['punchline']}
+    />
+  });
 
 
   return (
       <main>
-        <Joke 
-          setup={jokes[0]['setup']} 
-          punchline={jokes[0]['punchline']}
-        />
-        <Joke 
-          setup={jokes[1]['setup']} 
-          punchline={jokes[1]['punchline']}
-        />
-        <Joke 
-          setup={jokes[2]['setup']} 
-          punchline={jokes[2]['punchline']}
-        />
-        <Joke 
-          setup={jokes[3]['setup']} 
-          punchline={jokes[3]['punchline']}
-        />
-        <Joke 
-          setup={jokes[4]['setup']} 
-          punchline={jokes[4]['punchline']}
-        />
-        <Joke 
-          punchline={jokes[5]['punchline']}
-        />
+        {jokeElements}
       </main> 
   )
 }
