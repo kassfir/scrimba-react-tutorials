@@ -17,9 +17,9 @@ function App() {
 
             <Contact 
               img='./cats/mr-whiskerson.jpg'
-               name='Mr. Whiskerson' 
-               phone='(212) 555-1234' 
-               email='mr.whiskaz@catnap.meow'  
+              name='Mr. Whiskerson' 
+              phone='(212) 555-1234' 
+              email='mr.whiskaz@catnap.meow'  
             />
 
             <Contact 
