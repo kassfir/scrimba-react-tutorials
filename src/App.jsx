@@ -17,7 +17,7 @@ function App() {
   return ( 
     <div className='main-container'>
       <Header />
-      {/* <Hero /> */}
+      <Hero />
       <section className='cards-list'> 
         {eventComponents}
       </section>
