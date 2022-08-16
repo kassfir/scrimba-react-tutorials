@@ -1,50 +1,35 @@
 import React from "react"
-import Contact from './components/Contact'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 /* Challenge:
+One LAST time in this course, set up a React app from scratch
+- Render an <App /> component
+    - App should be in its own file
+- App should render 4-5 <Joke /> components 
+  (Joke component defined in its own file too)
+    - Each Joke should receive a "setup" prop and a "punchline" prop
+      and render those however you'd like
+- Use your favorite 2-part jokes (setup & punchline), or check
+  jokes.md file for some examples.
 
-- Create a Contact.js component in another file
-- Move one of the contact card divs below into that file
-- import and render 4 instances of that contact card
-    - Think ahead: what's the problem with doing it this way?
+
+
+EXTRA CREDIT:
+Some jokes are only a punchline with no setup:
+
+E.g.: "It’s hard to explain puns to kleptomaniacs because 
+they always take things literally."
+
+If you don't pass in a "question" prop, how might you make it only 
+show the punchline?
 */
 
 function App() {
     return (
-        <div className="contacts">
-
-            <Contact 
-              img='./cats/mr-whiskerson.jpg'
-              name='Mr. Whiskerson' 
-              phone='(212) 555-1234' 
-              email='mr.whiskaz@catnap.meow'  
-            />
-
-            <Contact 
-              img='./cats/fluffykins.jpg' 
-              name='Fluffykins' 
-              phone='(212) 555-2345' 
-              email='fluff@me.com'  
-            />
-
-            <Contact 
-              img='./cats/felix.jpg' 
-              name='Felix' 
-              phone='(212) 555-4567' 
-              email='thecat@hotmail.com'  
-            />
-
-            <Contact 
-              img='./cats/pumpkin.jpg' 
-              name='Pumpkin' 
-              phone='(0800) CAT KING' 
-              email='pumpkin@scrimba.com'  
-            />
-
-        </div>
+        <h1>empty app</h1>
     )
 }
 
 export default App
+
