@@ -1,9 +1,9 @@
 export default [
     {
         'id': 1,
-        'imgName': 'venice.jpg',
-        'country': 'Italy',
-        'googleMapsLink': 'https://example.net',
+        'imgName': 'venice2.jpg',
+        'country': 'ITALY',
+        'googleMapsLink': 'https://goo.gl/maps/wFtMKPNp5gLaMid66',
         'location': 'Venice',
         'startDate': Date(7, 7, 2021),
         'endDate': Date(12, 7, 2021),
@@ -12,8 +12,8 @@ export default [
     {
         'id': 2,
         'imgName': 'barcelona.jpg',
-        'country': 'Spain',
-        'googleMapsLink': 'https://example.net',
+        'country': 'SPAIN',
+        'googleMapsLink': 'https://goo.gl/maps/xn3FWx5GAGjvGmjS8',
         'location': 'Sagrada Família',
         'startDate': Date(7, 4, 2019),
         'endDate': Date(12, 4, 2019),
@@ -22,8 +22,8 @@ export default [
     {
         'id': 3,
         'imgName': 'budapest.jpg',
-        'country': 'Hungary',
-        'googleMapsLink': 'https://example.net',
+        'country': 'HUNGARY',
+        'googleMapsLink': 'https://goo.gl/maps/7QPzC5y6U3vdEimp8',
         'location': 'Budapest',
         'startDate': Date(12, 10, 2021),
         'endDate': Date(16, 10, 2021),
@@ -32,8 +32,8 @@ export default [
     {
         'id': 4,
         'imgName': 'valletta.jpg',
-        'country': 'Malta',
-        'googleMapsLink': 'https://example.net',
+        'country': 'MALTA',
+        'googleMapsLink': 'https://goo.gl/maps/suKrDzAA6qZX34rJ6',
         'location': 'Valletta',
         'startDate': Date(3, 7, 2021),
         'endDate': Date(7, 7, 2021),

@@ -1,24 +1,23 @@
-export default function TravelBlogEntry () {
+import Moment from 'moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationPin } from '@fortawesome/free-solid-svg-icons'
+
+export default function TravelBlogEntry (props) {
     return (
-        <div>
-            <img src="images/venice.jpg"/>
-            <div>
-                <div>
-                    {/* fa-location-pin */}
-                    <span>JAPAN</span>
-                    <span><a href="#">View in Google Maps</a></span>
+        <div className='blog-entry'>
+            <img src={`images/${props.item.imgName}`} className='blog-entry--image'/>
+            <div className='blog-entry--description'>
+                <div className='blog-entry--country-container'>
+                    <FontAwesomeIcon icon={ faLocationPin } className='blog-entry--pin' />
+                    <span className='blog-entry--country'>{props.item.country}</span>
+                    <span ><a href={props.item.googleMapsLink} className='blog-entry--google-maps-link'>View in Google Maps</a></span>
                 </div>
 
-                <h2>Mount Fuji</h2>
+                <h2 className='blog-entry--location'>{props.item.location}</h2>
 
-                <span>12. Jan 2021 – 24 Jan 2021</span>
+                <span className='blog-entry--dates'>{`${ Moment(props.item.startDate).format('DD/MM/YYYY')} – ${Moment(props.item.endDate).format('DD/MM/YYYY')}`}</span>
 
-                <p>
-                Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is 
-                the single most popular tourist site in Japan, for both Japanese and foreign tourists.
-                </p>
-
-
+                <p className='blog-entry--about'> {props.item.description} </p>
             </div> 
         </div>
     )
