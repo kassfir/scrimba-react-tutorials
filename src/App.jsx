@@ -1,9 +1,14 @@
 import React from "react"
+import TravelBlogEntry from "./components/TravelBlogEntry"
+import Navbar from "./components/Navbar"
 
 
 function App() {
     return (
-        <h1>Hi world</h1>
+      <div>
+        <Navbar />
+        <TravelBlogEntry />
+      </div>
     )
 }
 
