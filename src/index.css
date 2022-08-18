@@ -85,9 +85,13 @@ nav {
 
 .blog-entry--about {
   line-height: 150%;
-}
+  /* use this to transform \n into new lines. HTML by default uses <br>
+           or a new <p> element.  */
+  white-space: pre-line;
+} 
 
 .blog-entry--separator {
   border: 1px solid #F5F5F5;
   margin: 10px;
 }
+
