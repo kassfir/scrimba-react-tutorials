@@ -1,8 +1,13 @@
 import React from "react"
+import Meme from "./components/Meme"
+import Navbar from "./components/Navbar"
 
 function App() {
   return (
-    <h1>haha memes</h1>
+    <div>
+      <Navbar />
+      <Meme />
+    </div>
   )
 }
 
