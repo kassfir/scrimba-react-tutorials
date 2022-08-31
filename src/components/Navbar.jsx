@@ -1,9 +1,12 @@
-export default function Navbar () {
+export default function Navbar() {
     return (
-        <nav>
-            <img className='nav--icon' src="./trollface.png"/>
-            <h1 className='nav--title'>Meme Generator</h1>
-            <h6 className='nav--subtitle'>React Course - Project 3</h6>
-        </nav>
+        <header className="header">
+            <img 
+                src="./trollface.png" 
+                className="header--image"
+            />
+            <h2 className="header--title">Meme Generator</h2>
+            <h4 className="header--project">React Course - Project 3</h4>
+        </header>
     )
 }
