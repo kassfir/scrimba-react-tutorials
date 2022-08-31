@@ -10,6 +10,11 @@ export default function Meme() {
      * 2. Replace the hard-coded text on the image with
      *    the text being saved to state.
      */
+
+    const [formData, setFormData] = React.useState({
+        topText: '',
+        bottomText: '',
+    });
     
     const [meme, setMeme] = React.useState({
         topText: "",
@@ -19,15 +24,37 @@ export default function Meme() {
     const [allMemeImages, setAllMemeImages] = React.useState(memesData)
     
     
-    function getMemeImage() {
+    function getMemeImage(event) {
+        event.preventDefault();
+
+        if (formData.bottomText === '' || formData.topText === '') {
+            setMeme(prevMeme => ({
+                topText: 'One does not simply',
+                bottomText: 'Leave the form unfilled',
+                randomImage: 'http://i.imgflip.com/1bij.jpg'
+            }))
+            return;
+        }
+
         const memesArray = allMemeImages.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
         const url = memesArray[randomNumber].url
         setMeme(prevMeme => ({
-            ...prevMeme,
+            topText: formData.topText,
+            bottomText: formData.bottomText,
             randomImage: url
         }))
         
+    }
+
+    function handleChange(event) {
+        const {name, value} = event.target;
+        setFormData (prevFormData => {
+            return {
+                ...prevFormData,
+                [name]: value,
+            } 
+        })
     }
     
     return (
@@ -37,11 +64,17 @@ export default function Meme() {
                     type="text"
                     placeholder="Top text"
                     className="form--input"
+                    onChange={handleChange}
+                    name='topText'
+                    value={formData.topText}
                 />
                 <input 
                     type="text"
                     placeholder="Bottom text"
                     className="form--input"
+                    onChange={handleChange}
+                    name='bottomText'
+                    value={formData.bottomText}
                 />
                 <button 
                     className="form--button"
@@ -52,8 +85,8 @@ export default function Meme() {
             </div>
             <div className="meme">
                 <img src={meme.randomImage} className="meme--image" />
-                <h2 className="meme--text top">One does not simply</h2>
-                <h2 className="meme--text bottom">Walk into Mordor</h2>
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
         </main>
     )
