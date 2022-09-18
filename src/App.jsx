@@ -1,4 +1,5 @@
 import React from "react"
+import { Die } from "./components/Die";
 
 /**
  * Challenge:
@@ -16,24 +17,18 @@ import React from "react"
  *        in the center of the page
  */
 
-function Die(props){
-  return (<div className="die-face">
-    <h2 className="die-num">
-      {props.number}
-    </h2>
-  </div>)
-}
-
 
 function App() {
   const dice = () => {
     const dice = [];
     for (let i = 0; i < 10; i++){
-      dice.push(<Die number={Math.floor((Math.random()*6) + 1)}></Die>)
+      dice.push(<Die number={Math.floor((Math.random()*6) + 1)} key={i}></Die>)
     }
 
     return dice;
   }
+
+  const [first, setfirst] = React.useState(() => Math.random());
 
   return (
     <main>
