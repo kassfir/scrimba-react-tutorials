@@ -13,46 +13,29 @@ import { Die } from "./components/Die";
 
 
 function App() {
-  const [ diceValues, setDiceValues ] = React.useState(() => {
-    const tempDice = [];
 
-    for (let i = 0; i < 10; i++){
-      tempDice.push(Math.floor((Math.random()*6) + 1));
+  const [dice, setDice] = React.useState(() => allNewDice())
+
+  function allNewDice() {
+    const newDice = []
+    for (let i = 0; i < 10; i++) {
+        newDice.push(Math.floor(Math.random() * 6) + 1)
     }
 
-    return tempDice;
-  }); 
-
-
-  const dice = () => {
-    const newDice = [] 
-    
-    diceValues.forEach(
-      (dieValue, index) => {
-        console.log(dieValue, index);
-        newDice.push(<Die number={dieValue} key={index} />);
-      }
-    )
-    console.log(newDice);
-    return newDice;
+    return newDice
   }
 
-  function rollDice (event) {
-    event.preventDefault();
-    console.log('rolled');
-    const tempDice = [];
-
-    for (let i = 0; i < 10; i++){
-      tempDice.push(Math.floor((Math.random()*6) + 1));
-    }
-    console.log(tempDice);
-    setDiceValues(tempDice);
+  function rollDice() {
+      setDice(allNewDice())
   }
+
+
+  const diceElements = dice.map((die, index) => <Die number={die} key={index}/>)
 
   return (
     <main>
       <div className='dice-container'>
-        {dice ()}
+        {diceElements}
       </div>
       <button className="reroll-button" onClick={rollDice}>Roll dice</button>
     </main>
