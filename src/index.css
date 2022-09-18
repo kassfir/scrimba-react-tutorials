@@ -46,3 +46,16 @@ main {
 .die-num{
   font-size: 2rem;
 }
+
+.reroll-button {
+  border-radius: 5px;
+  background-color: #5035FF;
+  border: none;
+  margin: 2rem;
+  width: 50%;
+  height: 2rem;
+  color: white;
+  font-weight: 700;
+  font-size: large;
+  cursor: pointer;
+}

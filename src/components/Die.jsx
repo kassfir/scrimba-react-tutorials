@@ -6,4 +6,4 @@ export function Die(props){
             </h2>
         </div>
     )
-  }
+}
