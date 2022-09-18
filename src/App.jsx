@@ -19,18 +19,32 @@ function App() {
   function allNewDice() {
     const newDice = []
     for (let i = 0; i < 10; i++) {
-        newDice.push(Math.floor(Math.random() * 6) + 1)
+        newDice.push({
+          value: (Math.floor(Math.random() * 6) + 1), 
+          isHeld: false,
+        })
     }
 
     return newDice
   }
 
   function rollDice() {
-      setDice(allNewDice())
+    setDice(prevDice => {
+      const newDice = [];
+
+      prevDice.forEach(die => {
+        const newDie = die.isHeld ? 
+          die :
+          { value: (Math.floor(Math.random() * 6) + 1), isHeld: false };
+
+        newDice.push(newDie);
+      })
+      return newDice;
+    })
   }
 
 
-  const diceElements = dice.map((die, index) => <Die number={die} key={index}/>)
+  const diceElements = dice.map((die, index) => <Die number={die.value} key={index}/>)
 
   return (
     <main>
