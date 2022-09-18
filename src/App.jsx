@@ -1,23 +1,31 @@
 import React from "react"
 import { Die } from "./components/Die";
 import { nanoid } from "nanoid";
+import Confetti from 'react-confetti';
 
 /**
- * Challenge: Create a function `holdDice` that takes
- * `id` as a parameter. For now, just have the function
- * console.log(id).
- * 
- * Then, figure out how to pass that function down to each
- * instance of the Die component so when each one is clicked,
- * it logs its own unique ID property. (Hint: there's more
- * than one way to make that work, so just choose whichever
- * you want)
- * 
+ * Challenge:
+ * 1. Add new state called `tenzies`, default to false. It
+ *    represents whether the user has won the game yet or not.
+ * 2. Add an effect that runs every time the `dice` state array 
+ *    changes. For now, just console.log("Dice state changed").
  */
 
 function App() {
 
-  const [dice, setDice] = React.useState(() => allNewDice())
+  const [dice, setDice] = React.useState(() => allNewDice());
+  const [ tenzies, setTenzies ] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkedValue = dice[0].value;
+    const allSameValue = dice.every(die => die.value === checkedValue);
+
+    if (allSameValue) {
+      setTenzies(true);
+      console.log('all are eqal');
+    }
+
+  }, [dice])
 
   function allNewDice() {
     const newDice = [];
@@ -44,25 +52,7 @@ function App() {
         });
       })
       return newDice;
-    })
-
-    if(areDiceEqual()){
-      window.alert('winrar is you!');
-    }
-    
-  }
-
-  function areDiceEqual () {
-    let checkedValue = dice[0].value;
-
-    for (let i = 0; i < dice.length; i++) {
-
-      if (dice[i].value !== checkedValue) {
-        return false;
-      }
-    }
-
-    return true;
+    })  
   }
 
   function hold (id) {
@@ -71,18 +61,29 @@ function App() {
         return {...die, isHeld: die.id === id ? !die.isHeld : die.isHeld}
       })
     })
-    console.log(id);
   }
+
+  function restartGame () {
+    setDice(allNewDice());
+    setTenzies(false);
+  }
+
+  const mainButton = tenzies ? 
+    <button className="reroll-button" onClick={restartGame}>New game</button>:
+    <button className="reroll-button" onClick={rollDice}>Roll</button>;
 
 
   const diceElements = dice.map((die) => <Die clickHandler={() => hold(die.id)} isHeld={die.isHeld} number={die.value} key={die.id}/>)
 
   return (
     <main>
+      <h1 className="title">Tenzies</h1>
+      <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
       <div className='dice-container'>
         {diceElements}
       </div>
-      <button className="reroll-button" onClick={rollDice}>Roll dice</button>
+      { mainButton }
+      {tenzies && <Confetti />}
     </main>
   )
 }

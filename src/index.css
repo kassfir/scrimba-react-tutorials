@@ -12,8 +12,8 @@ body {
 
 main {
   padding: 36px;
-  max-width: 320px;
-  height: 320px;
+  max-width: 400px;
+  height: 400px;
   
   margin: auto;
   background: #F5F5F5;
@@ -55,14 +55,31 @@ main {
 }
 
 .reroll-button {
-  border-radius: 5px;
-  background-color: #5035FF;
+  height: 50px;
+  width: 100px;
   border: none;
-  margin: 2rem;
-  width: 50%;
-  height: 2rem;
+  border-radius: 6px;
+  background-color: #5035FF;
   color: white;
-  font-weight: 700;
-  font-size: large;
+  font-size: 1.2rem;
+  font-family: 'Karla', sans-serif;
   cursor: pointer;
+  margin: 1rem;
+}
+
+.reroll-button:focus {
+  outline: none;
+}
+
+.reroll-button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.title{
+  text-align: center;
+}
+
+.instructions{
+  text-align: center;
+  padding: 1rem 0rem; 
 }
