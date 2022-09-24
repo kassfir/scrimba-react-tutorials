@@ -5,10 +5,10 @@ import Confetti from 'react-confetti';
 
 /**
  * Challenge:
- * 1. Add new state called `tenzies`, default to false. It
- *    represents whether the user has won the game yet or not.
- * 2. Add an effect that runs every time the `dice` state array 
- *    changes. For now, just console.log("Dice state changed").
+ * CSS - put real dots on the die
+ * Track the number of rolls
+ * Track the time it took to win
+ * Save best time to localStorage
  */
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
 
     if (allSameValue) {
       setTenzies(true);
-      console.log('all are eqal');
+      console.log('all are equal');
     }
 
   }, [dice])

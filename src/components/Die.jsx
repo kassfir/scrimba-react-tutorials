@@ -1,14 +1,24 @@
+import "./die.css"
+
+//Formatting and die layout grabbed from this codepen
+// codesandbox.io/s/react-css-grid-dice-cly4v?from-embed=&file=/src/components/die.css:159-187
+
+const Pip = () => <span className="pip" />;
+
 export function Die(props){
 
     const dieClass = props.isHeld ? 
-        "die-face is-held" : 
-        "die-face is-not-held";
+        "face is-held" : 
+        "face is-not-held";
 
-    return (
+    let pips = Number.isInteger(props.number)
+		? Array(props.number)
+				.fill(0)
+				.map((_, i) => <Pip key={i} />)
+		: null;
+	return (
         <div className={dieClass} onClick={props.clickHandler}>
-            <h2 className="die-num">
-                {props.number}
-            </h2>
+            {pips}
         </div>
-    )
+    );
 }

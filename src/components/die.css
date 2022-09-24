@@ -1,0 +1,70 @@
+.face {
+    display: grid;
+    grid-template-areas: 
+        "a . c" 
+        "e g f"
+        "d . b";
+
+    flex: 0 0 auto;
+    margin: 5px;
+    padding: 3px;
+    width: 40px;
+    height: 40px;
+
+    background-color: antiquewhite;
+
+    border-radius: 10%;
+}
+
+.pip {
+    display: block;
+    align-self: center;
+    justify-self: center;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #333;
+    box-shadow: 
+        inset 0 1px #111, 
+        inset 0 -1px #555;
+}
+
+.pip:nth-child(2) {
+	grid-area: b;
+}
+.pip:nth-child(3) {
+	grid-area: c;
+}
+.pip:nth-child(4) {
+	grid-area: d;
+}
+.pip:nth-child(5) {
+	grid-area: e;
+}
+.pip:nth-child(6) {
+	grid-area: f;
+}
+/* This selects the last pip of odd-valued dice (1, 3, 5) and positions the pip in the center */
+.pip:nth-child(odd):last-child {
+	grid-area: g;
+}
+
+.is-held {
+    background-color: #59E391;
+
+    box-shadow: 
+        inset 0 2px #a3fac6, 
+        inset 0 -2px #38975e, 
+        inset 2px 0 #49D381, 
+        inset -2px 0 #49D381;
+  }
+  
+.is-not-held {
+	background-color: #e7e7e7;
+
+    box-shadow: 
+        inset 0 2px white, 
+        inset 0 -2px #bbb, 
+        inset 2px 0 #d7d7d7, 
+        inset -2px 0 #d7d7d7;
+  }
