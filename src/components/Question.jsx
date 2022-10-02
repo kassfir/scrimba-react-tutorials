@@ -18,6 +18,7 @@ export default function Question (props) {
         <>
             <h2>{question.question}</h2>
             { answerButtons }
+            <hr />
         </>
         
     )

@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Question from './Question';
+import { decode } from 'he';
 
 
 function QuizScreen () {
@@ -9,18 +10,23 @@ function QuizScreen () {
     const [isLoaded, setIsLoaded] = React.useState(false);
 
     React.useEffect(() => {
+
+        if (isLoaded) {
+            return;
+        }
+
         fetch('https://opentdb.com/api.php?amount=5')
             .then(responseData => responseData.json())
             .then(responseJson => {
                 const quiz = [];
 
                 responseJson.results.forEach(question => {
-                    const incorrectAnswers = [];
+                    const answers = [];
 
                     for (let i = 0; i < question.incorrect_answers.length; i++){
-                        incorrectAnswers.push(
+                        answers.push(
                             {
-                                answerText: question.incorrect_answers[i],
+                                answerText: decode(question.incorrect_answers[i]),
                                 isCorrect: false,
                                 isSelected: false,
                                 id: nanoid(),
@@ -28,20 +34,17 @@ function QuizScreen () {
                         );
                     }
 
-                    const correctAnswer = {
-                        answerText: question.correct_answer,
+                    answers.push({
+                        answerText: decode(question.correct_answer),
                         isCorrect: true,
                         isSelected: false,
                         id: nanoid(),
-                    }
+                    });
 
                     quiz.push({
                         id: nanoid(),
-                        question: question.question,
-                        answers: [
-                            correctAnswer,
-                            ...incorrectAnswers
-                        ],
+                        question: decode(question.question),
+                        answers: answers,
                     });
 
                     setQuizQuestions(quiz);
@@ -62,11 +65,12 @@ function QuizScreen () {
                 }
 
                 const updatedAnswers = prevStateQuestion.answers.map(prevAnswer => {
-                    const isSelected = prevAnswer.id === answerId ? true : false;
 
                     return ({
                         ...prevAnswer, 
-                        isSelected: isSelected,
+                        isSelected: prevAnswer.id === answerId ? 
+                            !prevAnswer.isSelected : 
+                            false,
                     })
                 })
 
@@ -80,22 +84,28 @@ function QuizScreen () {
 
         });
 
-        console.log(quizQuestions);
     }
 
+    const questionComponents = quizQuestions.map(quizQuestion => {
+        return  (
+            <Question 
+                key={quizQuestion.id} 
+                question={quizQuestion} 
+                handleAnswerSelect={handleAnswerSelect} 
+            />
+        );
+    })
     
 
-    
-
-
+    const loadingSpinner = <h1>...loading!</h1>;
     return (
-        isLoaded ? 
-        <Question 
-            key={quizQuestions[0].id} 
-            question={quizQuestions[0]} 
-            handleAnswerSelect={handleAnswerSelect} 
-        /> :
-        <h1>...loading!</h1>
+    <>
+        {
+            isLoaded ? 
+            questionComponents :
+            loadingSpinner
+        }
+    </>
     );
 }
 

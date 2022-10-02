@@ -18,6 +18,11 @@ function App() {
   return (
     <main>
       {isQuizStarted ? <QuizScreen/> : <StartScreen onClick={(event) => startQuiz(event)}/>}
+      <div className="blob-area">
+        <img src = "assets/blobs/yellow-blob.svg" className="yellow-blob" alt="yellow-blob"/>
+        <img src = "assets/blobs/blue-blob.svg" className="blue-blob" alt="blue-blob"/>
+      </div>
+
     </main>
 
   )
