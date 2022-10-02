@@ -105,6 +105,12 @@ function QuizScreen () {
             questionComponents :
             loadingSpinner
         }
+
+        <button 
+            className='action-button'
+        >
+            Check answers
+        </button>
     </>
     );
 }

@@ -22,13 +22,17 @@ main {
 
 .answer-button {
   min-width: 70px;
-  height: 2rem;
-  margin: 0.75rem 1rem;
-  padding: 0px 6px;
+  padding: 0.25rem 0.5rem;
   cursor: pointer;
   border: 0px;
-  
-  border-radius: 7.94239px
+  border-radius: 7.94239px;
+  font-weight: 500;
+}
+
+.answer-container{
+  padding: 1.5rem 0rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .selected{
@@ -42,8 +46,18 @@ main {
 }
 
 hr{
-  margin: 1rem 0rem;
   color: #D6DBF5;
+}
+
+.action-button{
+  background-color: #4D5B9E;
+  color: #F5F7FB;
+  border: 0px;  
+  border-radius: 7.94239px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 200px;
+  height: 50px;
 }
 
 .yellow-blob{
