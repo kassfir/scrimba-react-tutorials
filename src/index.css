@@ -30,7 +30,7 @@ main {
 }
 
 .answer-container{
-  padding: 1.5rem 0rem;
+  padding-top: 1.5rem;
   display: flex;
   gap: 1.5rem;
 }
@@ -41,12 +41,32 @@ main {
 }
 
 .unselected{
-  outline: 2px solid #4D5B9E;
+  outline: 2px solid #293264;
   background-color: white;
 }
 
+.incorrect{
+  background-color: #F8BCBC;
+  outline: 2px transparent;
+  color: #4D5B9E;
+}
+
+.ignored {
+  outline: 2px solid #4D5B9E;
+  background-color: transparent;
+  color: #4D5B9E;
+}
+
+.correct {
+  outline: 2px solid transparent;
+  background-color: #94D7A2;
+}
+
+
+
 hr{
-  color: #D6DBF5;
+  border: 1.5 solid #DBDEF0;
+  margin: 1.5rem 0;
 }
 
 .action-button{

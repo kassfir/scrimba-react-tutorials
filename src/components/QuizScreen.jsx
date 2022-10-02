@@ -8,6 +8,7 @@ function QuizScreen () {
 
     const [quizQuestions, setQuizQuestions] = React.useState([]);
     const [isLoaded, setIsLoaded] = React.useState(false);
+    const [isQuizChecked, setIsQuizChecked] = React.useState(false);
 
     React.useEffect(() => {
 
@@ -92,6 +93,7 @@ function QuizScreen () {
                 key={quizQuestion.id} 
                 question={quizQuestion} 
                 handleAnswerSelect={handleAnswerSelect} 
+                isQuizChecked={isQuizChecked}
             />
         );
     })
@@ -108,6 +110,9 @@ function QuizScreen () {
 
         <button 
             className='action-button'
+            onClick={() => {
+                setIsQuizChecked(true)
+            }}
         >
             Check answers
         </button>
