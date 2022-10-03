@@ -9,6 +9,7 @@ function QuizScreen () {
     const [quizQuestions, setQuizQuestions] = React.useState([]);
     const [isLoaded, setIsLoaded] = React.useState(false);
     const [isQuizChecked, setIsQuizChecked] = React.useState(false);
+    const [correctAnswerCount, setCorrectAnswerCount] = React.useState(0);
 
     React.useEffect(() => {
 
@@ -20,9 +21,9 @@ function QuizScreen () {
             .then(responseData => responseData.json())
             .then(responseJson => {
                 const quiz = [];
+                const answers = [];
 
                 responseJson.results.forEach(question => {
-                    const answers = [];
 
                     for (let i = 0; i < question.incorrect_answers.length; i++){
                         answers.push(
@@ -87,6 +88,36 @@ function QuizScreen () {
 
     }
 
+    function checkResults (event) {
+        event.preventDefault();
+
+        let count = 0;
+        let isAllSelected = true;
+        
+        quizQuestions.forEach(question => {
+            let isAnySelected = false;
+            question.answers.forEach(answer => {
+                  if (answer.isSelected){
+                    isAnySelected = true;
+
+                    if (answer.isSelected === answer.isCorrect){
+                        count++;
+                    }
+                }
+            })
+
+            if (!isAnySelected) {
+                isAllSelected = false;
+            }
+        })
+
+        setCorrectAnswerCount(count);
+
+        if (isAllSelected) {
+            setIsQuizChecked(true);
+        }
+    }
+
     const questionComponents = quizQuestions.map(quizQuestion => {
         return  (
             <Question 
@@ -97,7 +128,8 @@ function QuizScreen () {
             />
         );
     })
-    
+
+    const correctAnswerCounter = <h2>You scored {correctAnswerCount}/{quizQuestions.length} correct answers</h2>
 
     const loadingSpinner = <h1>...loading!</h1>;
     return (
@@ -110,12 +142,12 @@ function QuizScreen () {
 
         <button 
             className='action-button'
-            onClick={() => {
-                setIsQuizChecked(true)
-            }}
+            onClick={checkResults}
         >
             Check answers
         </button>
+
+        { isQuizChecked && correctAnswerCounter}
     </>
     );
 }

@@ -33,33 +33,51 @@ main {
   padding-top: 1.5rem;
   display: flex;
   gap: 1.5rem;
+  transition: background-color, outline, color;
+  transition-duration: 0.17;
+  transition-timing-function: ease-in-out;
 }
 
 .selected{
   background-color: #D6DBF5;
   outline: 2px transparent;
+  transition: background-color, outline, color;
+  transition-duration: 0.17;
+  transition-timing-function: ease-in-out;
 }
 
 .unselected{
   outline: 2px solid #293264;
-  background-color: white;
+  background-color: transparent;
+  transition: background-color, outline, color;
+  transition-duration: 0.17;
+  transition-timing-function: ease-in-out;
 }
 
 .incorrect{
   background-color: #F8BCBC;
   outline: 2px transparent;
-  color: #4D5B9E;
+  color: #4D5B9E88;
+  transition: background-color, outline, color;
+  transition-duration: 0.17;
+  transition-timing-function: ease-in-out;
 }
 
 .ignored {
-  outline: 2px solid #4D5B9E;
+  outline: 2px solid #4D5B9E88;
   background-color: transparent;
-  color: #4D5B9E;
+  color: #4D5B9E88;
+  transition: background-color, outline, color;
+  transition-duration: 0.17;
+  transition-timing-function: ease-in-out;
 }
 
 .correct {
   outline: 2px solid transparent;
   background-color: #94D7A2;
+  transition: background-color, outline, color;
+  transition-duration: 0.17;
+  transition-timing-function: ease-in-out;
 }
 
 
@@ -86,7 +104,6 @@ hr{
   right: -15vw;
   top: -20vh;  
   z-index: -1;
-  overflow: hidden;
 }
 
 .blue-blob{
