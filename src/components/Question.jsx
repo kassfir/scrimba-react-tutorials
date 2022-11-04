@@ -1,3 +1,5 @@
+import './Question.css';
+
 export default function Question (props) {
     
     const {question, handleAnswerSelect, isQuizChecked} = props;

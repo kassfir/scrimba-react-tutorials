@@ -10,7 +10,6 @@ function App() {
 
   function startQuiz (event) {
     event.preventDefault();
-    console.log('fgsfds');  
     setIsQuizStarted(true);
   }
 

@@ -1,3 +1,4 @@
+import './QuizScreen.css';
 import { nanoid } from 'nanoid';
 import React from 'react';
 import Question from './Question';
@@ -169,7 +170,12 @@ function QuizScreen () {
 
     );
 
-    const loadingSpinner = <h1>...loading!</h1>;
+    const loadingSpinner =( 
+        <div className='center-content'>
+            <h1>...loading!</h1>
+        </div>
+    );
+
     return (
     <>
         {
@@ -180,7 +186,7 @@ function QuizScreen () {
 
        
         
-        { isQuizChecked ? endQuizStats : checkAnswerButton }
+        { isLoaded && (isQuizChecked ? endQuizStats : checkAnswerButton) }
     </>
     );
 }

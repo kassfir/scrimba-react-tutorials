@@ -1,0 +1,64 @@
+.answer-button {
+    min-width: 70px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 7.94239px;
+    font-weight: 500;
+  }
+  
+  .answer-container{
+    padding-top: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    transition: background-color 0.17, outline 0.17, color 0.17;
+    transition-duration: 0.17;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .selected{
+    background-color: #D6DBF5;
+    outline: 2px transparent;
+    transition: background-color, outline, color;
+    transition-duration: 0.17;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .unselected{
+    outline: 2px solid #293264;
+    background-color: transparent;
+    transition: background-color, outline, color;
+    transition-duration: 0.17;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .incorrect{
+    background-color: #F8BCBC;
+    outline: 2px transparent;
+    color: #4D5B9E88;
+    transition: background-color, outline, color;
+    transition-duration: 0.17;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .ignored {
+    outline: 2px solid #4D5B9E88;
+    background-color: transparent;
+    color: #4D5B9E88;
+    transition: background-color, outline, color;
+    transition-duration: 0.17;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .correct {
+    outline: 2px solid transparent;
+    background-color: #94D7A2;
+    transition: background-color, outline, color;
+    transition-duration: 0.17;
+    transition-timing-function: ease-in-out;
+  }
+  
+  hr{
+    border: 1.5 solid #DBDEF0;
+    margin: 1.5rem 0;
+  }
