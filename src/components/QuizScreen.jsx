@@ -188,10 +188,14 @@ function QuizScreen () {
             questionComponents :
             loadingSpinner
         }
-
-       
         
-        { isLoaded && (isQuizChecked ? endQuizStats : checkAnswerButton) }
+        { 
+            isLoaded && (
+                isQuizChecked ? 
+                endQuizStats : 
+                checkAnswerButton
+            ) 
+        }
     </>
     );
 }
