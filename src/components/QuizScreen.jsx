@@ -11,54 +11,70 @@ function QuizScreen () {
     const [isQuizChecked, setIsQuizChecked] = React.useState(false);
     const [correctAnswerCount, setCorrectAnswerCount] = React.useState(0);
 
+        //There's a glitch with useEffectOnce
     React.useEffect(() => {
 
         if (isLoaded) {
             return;
         }
+        loadQuiz();
+    }, []);
 
+    function loadQuiz () {
         fetch('https://opentdb.com/api.php?amount=5')
-            .then(responseData => responseData.json())
-            .then(responseJson => {
-                const quiz = [];
+        .then(responseData => responseData.json())
+        .then(responseJson => {
+            
+            const quiz = [];
+            console.log(responseJson);
+            
+            responseJson.results.forEach(question => {
                 const answers = [];
 
-                responseJson.results.forEach(question => {
+                for (let i = 0; i < question.incorrect_answers.length; i++){
+                    answers.push(
+                        {
+                            answerText: decode(question.incorrect_answers[i]),
+                            isCorrect: false,
+                            isSelected: false,
+                            id: nanoid(),
+                        }
+                    );
+                }
 
-                    for (let i = 0; i < question.incorrect_answers.length; i++){
-                        answers.push(
-                            {
-                                answerText: decode(question.incorrect_answers[i]),
-                                isCorrect: false,
-                                isSelected: false,
-                                id: nanoid(),
-                            }
-                        );
-                    }
+                answers.push({
+                    answerText: decode(question.correct_answer),
+                    isCorrect: true,
+                    isSelected: false,
+                    id: nanoid(),
+                });
 
-                    answers.push({
-                        answerText: decode(question.correct_answer),
-                        isCorrect: true,
-                        isSelected: false,
-                        id: nanoid(),
-                    });
+                quiz.push({
+                    id: nanoid(),
+                    question: decode(question.question),
+                    answers: answers,
+                });
 
-                    quiz.push({
-                        id: nanoid(),
-                        question: decode(question.question),
-                        answers: answers,
-                    });
-
-                    setQuizQuestions(quiz);
-                    setIsLoaded(true);
-                })
+                setQuizQuestions(quiz);
+                setIsLoaded(true);
             })
-            .catch(error => console.error(error))
-        }, 
-    []);
+        })
+        .catch(error => console.error(error));
+    }
+
+    function restartGame (event){
+        event.preventDefault();
+        setIsLoaded (false);
+        setIsQuizChecked(false);
+        loadQuiz();
+    }
 
     function handleAnswerSelect (event, questionId, answerId){
         event.preventDefault();
+
+        if (isQuizChecked){
+            return
+        }
 
         setQuizQuestions(prevState => {
             return prevState.map(prevStateQuestion => {
@@ -131,6 +147,24 @@ function QuizScreen () {
 
     const correctAnswerCounter = <h2>You scored {correctAnswerCount}/{quizQuestions.length} correct answers</h2>
 
+    const playAgainButton = ( 
+        <button 
+            className='action-button'
+            onClick={restartGame}
+        >
+            Play again
+        </button>
+    );
+
+    const checkAnswerButton = ( 
+        <button 
+            className='action-button'
+            onClick={checkResults}
+        >
+            Check answers
+        </button>
+    );
+
     const loadingSpinner = <h1>...loading!</h1>;
     return (
     <>
@@ -140,14 +174,9 @@ function QuizScreen () {
             loadingSpinner
         }
 
-        <button 
-            className='action-button'
-            onClick={checkResults}
-        >
-            Check answers
-        </button>
-
-        { isQuizChecked && correctAnswerCounter}
+       
+        
+        { isQuizChecked ? playAgainButton : checkAnswerButton }
     </>
     );
 }
