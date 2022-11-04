@@ -145,24 +145,28 @@ function QuizScreen () {
         );
     })
 
-    const correctAnswerCounter = <h2>You scored {correctAnswerCount}/{quizQuestions.length} correct answers</h2>
-
-    const playAgainButton = ( 
-        <button 
-            className='action-button'
-            onClick={restartGame}
-        >
-            Play again
-        </button>
+    const endQuizStats = ( 
+        <div className='quiz-bottom-items'>
+            <h2>You scored {correctAnswerCount}/{quizQuestions.length} correct answers</h2>
+            <button 
+                className='action-button'
+                onClick={restartGame}
+            >
+                Play again
+            </button>
+        </div>
     );
 
     const checkAnswerButton = ( 
-        <button 
-            className='action-button'
-            onClick={checkResults}
-        >
-            Check answers
-        </button>
+        <div className='quiz-bottom-items'>
+            <button 
+                className='action-button'
+                onClick={checkResults}
+            >
+                Check answers
+            </button>
+        </div>
+
     );
 
     const loadingSpinner = <h1>...loading!</h1>;
@@ -176,7 +180,7 @@ function QuizScreen () {
 
        
         
-        { isQuizChecked ? playAgainButton : checkAnswerButton }
+        { isQuizChecked ? endQuizStats : checkAnswerButton }
     </>
     );
 }
