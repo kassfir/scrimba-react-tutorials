@@ -11,6 +11,7 @@ function QuizScreen () {
     const [isLoaded, setIsLoaded] = React.useState(false);
     const [isQuizChecked, setIsQuizChecked] = React.useState(false);
     const [correctAnswerCount, setCorrectAnswerCount] = React.useState(0);
+    const [hasError, setHasError] = React.useState(false);
 
         //There's a glitch with useEffectOnce
     React.useEffect(() => {
@@ -73,6 +74,8 @@ function QuizScreen () {
     function handleAnswerSelect (event, questionId, answerId){
         event.preventDefault();
 
+        setHasError(false);
+
         if (isQuizChecked){
             return
         }
@@ -125,6 +128,7 @@ function QuizScreen () {
 
             if (!isAnySelected) {
                 isAllSelected = false;
+                setHasError(true);
             }
         })
 
@@ -160,6 +164,7 @@ function QuizScreen () {
 
     const checkAnswerButton = ( 
         <div className='quiz-bottom-items'>
+            { hasError && <p className='error-message'>Make sure you answer all quiz questions!</p>}
             <button 
                 className='action-button'
                 onClick={checkResults}
