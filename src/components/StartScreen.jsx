@@ -1,10 +1,15 @@
 function StartScreen(props) {
     return (
-        <>
-            <h1>Quizzical</h1>
-            <h4>Some description if needed</h4>
-            <button onClick={props.onClick}>Start quiz</button>
-        </>
+        <div className='landing-page-content'>
+            <h1 className='landing-page--title'>Quizzical</h1>
+            <h4 className='landing-page--subtitle'>Some description if needed</h4>
+            <button 
+                onClick={props.onClick}
+                className='action-button landing-page--button'
+            >
+                Start quiz
+            </button>
+        </div>
     )
 }
 

@@ -6,7 +6,7 @@ import QuizScreen from "./components/QuizScreen";
 
 function App() {
 
-  const [isQuizStarted, setIsQuizStarted] = React.useState(true);
+  const [isQuizStarted, setIsQuizStarted] = React.useState(false);
 
   function startQuiz (event) {
     event.preventDefault();
